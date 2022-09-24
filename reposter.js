@@ -6,7 +6,9 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
-client.login("<SECRET_BOT_TOKEN>").catch(console.error);
+require("dotenv/config");
+
+client.login(process.env.DR_BOT_TOKEN).catch(console.error);
 
 client.on("ready", function() {
 	const serverCount = client.guilds.cache.size;
@@ -24,12 +26,14 @@ let config = {
 	live: {}
 };
 
+const configFile = "./config/config.json";
+
 function updateJson() {
-	fs.writeFileSync("config.json", JSON.stringify(config, undefined, "\t"));
+	fs.writeFileSync(configFile, JSON.stringify(config, undefined, "\t"));
 }
 
-if (fs.existsSync("config.json")) {
-	config = JSON.parse(fs.readFileSync("config.json", "utf8"));
+if (fs.existsSync(configFile)) {
+	config = JSON.parse(fs.readFileSync(configFile, "utf8"));
 } else {
 	updateJson();
 }
