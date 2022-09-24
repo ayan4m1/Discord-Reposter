@@ -1,14 +1,12 @@
 {
-  "name": "Discord-Reposter",
+  "name": "discord-reposter",
   "version": "1.0.0",
   "description": "Bot for reposting Discord messages.",
   "main": "reposter.js",
   "engines": {
-    "node": "12.x",
-    "npm": "*"
+    "node": ">=12.x"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node reposter.js"
   },
   "keywords": [
@@ -34,7 +32,8 @@
   "author": "MysteryPancake",
   "license": "MIT",
   "dependencies": {
+    "@discordjs/opus": "^0.3.3",
     "discord.js": "^12.4.1",
-    "@discordjs/opus": "^0.3.3"
+    "dotenv": "^16.0.2"
   }
 }
