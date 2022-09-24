@@ -1,0 +1,10 @@
+services:
+  bot:
+    image: discord-reposter
+    build: ./
+    environment:
+      - DR_BOT_TOKEN
+    volumes:
+      - config:/usr/share/discord-reposter/config
+volumes:
+  config:
