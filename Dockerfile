@@ -1,10 +1,10 @@
 FROM node:16-alpine
 
+RUN apk add python3 alpine-sdk
+
 COPY . /usr/share/discord-reposter
 
 WORKDIR /usr/share/discord-reposter
-
-RUN apk add python3 alpine-sdk
 
 RUN npm ci
 
